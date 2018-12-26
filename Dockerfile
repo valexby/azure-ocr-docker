@@ -6,7 +6,10 @@ RUN apk add --update --no-cache --virtual .run-deps \
         tiff \
         'tesseract-ocr=3.05.02-r0' \
         freetds-dev \
-    && apk add --update --no-cache --virtual .build-deps \
+    && apk add --update --no-cache --allow-untrusted \
+        --repository http://dl-3.alpinelinux.org/alpine/edge/testing  \
+        --virtual .build-deps \
+        hdf5-dev \
         libffi-dev \
         openssl-dev \
         freetype-dev \
@@ -14,7 +17,6 @@ RUN apk add --update --no-cache --virtual .run-deps \
         'tesseract-ocr-dev=3.05.02-r0' \
         libxml2-dev \
         libxslt-dev \
-    && apk add --update --no-cache hdf5-dev@testing \
     && rm -rf /var/cache/apk/* \
     && pip install --no-cache-dir -r requirements.txt \
     && apk del .build-deps
