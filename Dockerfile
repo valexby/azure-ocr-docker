@@ -33,6 +33,6 @@ RUN rm -rf /usr/bin/pip \
         freetds-dev \
         python3-dev \
         clang \
-    && rm -rf /var/cache/apk/*
-RUN pip install --no-cache-dir -r requirements.txt \
+    && rm -rf /var/cache/apk/* \
+    && pip install --no-cache-dir -r requirements.txt \
     && apk del .build-deps
