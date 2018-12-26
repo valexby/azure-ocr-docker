@@ -2,7 +2,9 @@ FROM alexvasiuk/python_alpine_cv2_tf
 
 COPY ./requirements.txt ./requirements.txt
 
-RUN apk add --update --no-cache \
+RUN rm -rf /usr/bin/pip \
+    && ln -s /usr/bin/pip3 /usr/bin/pip \
+    && apk add --update --no-cache \
         --allow-untrusted \
         --repository http://dl-3.alpinelinux.org/alpine/edge/testing  \
         --virtual .run-deps \
@@ -28,6 +30,7 @@ RUN apk add --update --no-cache \
         libxml2-dev \
         libxslt-dev \
         freetds-dev \
+        python-dev \
     && rm -rf /var/cache/apk/* \
     && pip install --no-cache-dir -r requirements.txt \
     && apk del .build-deps
