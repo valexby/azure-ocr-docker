@@ -21,6 +21,7 @@ RUN rm -rf /usr/bin/pip \
     && apk add --update --no-cache --allow-untrusted \
         --repository http://dl-3.alpinelinux.org/alpine/edge/testing  \
         --virtual .build-deps \
+        build-base \
         hdf5-dev \
         libffi-dev \
         openssl-dev \
