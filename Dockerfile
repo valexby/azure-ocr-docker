@@ -32,6 +32,6 @@ RUN rm -rf /usr/bin/pip \
         libxslt-dev \
         freetds-dev \
         python-dev \
-    && rm -rf /var/cache/apk/* \
-    && pip install --no-cache-dir -r requirements.txt \
+    && rm -rf /var/cache/apk/*
+RUN pip install --no-cache-dir -r requirements.txt \
     && apk del .build-deps
