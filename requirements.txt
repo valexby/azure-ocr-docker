@@ -1,0 +1,9 @@
+cython
+azure==3.0.0
+pymongo==3.7.1
+pymssql==2.1.4 --no-binary pymssql
+scipy==1.1.0
+tesserocr==2.3.1
+numpy==1.15.1
+scikit-learn==0.19.2
+pandas==0.23.4
