@@ -2,10 +2,20 @@ FROM alexvasiuk/python_alpine_cv2_tf
 
 COPY ./requirements.txt ./requirements.txt
 
-RUN apk add --update --no-cache --virtual .run-deps \
+RUN apk add --update --no-cache \
+        --allow-untrusted \
+        --repository http://dl-3.alpinelinux.org/alpine/edge/testing  \
+        --virtual .run-deps \
         tiff \
         'tesseract-ocr=3.05.02-r0' \
-        freetds-dev \
+        freetds \
+        hdf5 \
+        libffi \
+        openssl \
+        freetype \
+        leptonica \
+        libxml2 \
+        libxslt \
     && apk add --update --no-cache --allow-untrusted \
         --repository http://dl-3.alpinelinux.org/alpine/edge/testing  \
         --virtual .build-deps \
@@ -17,6 +27,7 @@ RUN apk add --update --no-cache --virtual .run-deps \
         'tesseract-ocr-dev=3.05.02-r0' \
         libxml2-dev \
         libxslt-dev \
+        freetds-dev \
     && rm -rf /var/cache/apk/* \
     && pip install --no-cache-dir -r requirements.txt \
     && apk del .build-deps
