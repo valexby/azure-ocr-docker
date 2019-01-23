@@ -1,4 +1,4 @@
-FROM python:3.6.5-stretch
+FROM python:3.6.8-stretch
 
 ENV LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/lib"
 
