@@ -10,5 +10,5 @@ pandas==0.23.4
 SQLAlchemy==1.2.15
 pytest==4.0.0
 pytest-pylint==0.12.3
-pytest-flake8==1.0.2
+pytest-flake8==1.0.4
 opencv-python==3.4.2.17
