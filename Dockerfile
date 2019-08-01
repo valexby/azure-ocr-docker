@@ -60,7 +60,7 @@ RUN pip install --no-cache cython==0.29.1
 COPY ./requirements.txt /tmp/
 RUN pip install --no-cache -r /tmp/requirements.txt
 
-FROM python:3.6.5-slim-stretch
+FROM python:3.6.8-slim-stretch
 
 COPY --from=builder  /usr/local/ /usr/local/
 COPY --from=builder  /usr/bin/ /usr/bin/
