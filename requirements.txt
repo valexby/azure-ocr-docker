@@ -4,7 +4,7 @@ pyodbc==4.0.26
 pillow==5.2.0
 scipy==1.1.0
 tesserocr==2.3.1
-numpy==1.14.5
+numpy==1.22.0
 scikit-learn==0.19.2
 pandas==0.23.4
 SQLAlchemy==1.2.15
